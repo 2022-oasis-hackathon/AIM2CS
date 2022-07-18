@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../static/Aim2cs_app/css/upload.css" />
+        <title>AIM2CS</title>
+ 
+    </head>
+    <body>
+        <nav>
+            <a href="../"><img src="../../static/Aim2cs_app/images/logo.png" style="width: 10%;"></a>
+            <a href="./"><img src="../../static/Aim2cs_app/images/uploadf.png" style="float: right; width: 10%;"></a>
+        </nav>
+
+        <div class="upload">
+
+            <div class="upload_img">
+                <img src="../../static/Aim2cs_app/images/preview.png" id="preview-image" width="90%">
+            </div>
+
+            <div class="upload_form">
+                <form action="../upload_confirm/" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="radio" id="category" name="category" value="image">사진
+                    <input type="radio" id="category" name="category" value="video">영상
+                    <br>
+                    <input type="file" name="file" class="btn none" id="img-upload-btn">    
+                    <br>
+                    <input type="radio" id="season" name="season" value="spring">#봄
+                    <input type="radio" id="season" name="season" value="summer">#여름
+                    <input type="radio" id="season" name="season" value="fall">#가을
+                    <input type="radio" id="season" name="season" value="winter">#겨울
+                    <br>
+                    <input type="radio" id="weather" name="weather" value="rain">#비
+                    <input type="radio" id="weather" name="weather" value="cloud">#구름
+                    <input type="radio" id="weather" name="weather" value="snow">#눈
+                    <input type="radio" id="weather" name="weather" value="wind">#바람
+                    <input type="radio" id="weather" name="weather" value="sun">#해
+                    <br>
+                    <input type="submit" button type="button" class="ok" onclick="location.href='../upload_confirm/'" value="UPLOAD"></button>
+                </form>
+            </div>
+
+        </div> 
+        
+    </body>
+
+    <script>
+        // 절대 손대지마세요
+        function imagePreview(input) {
+            if(input.files && input.files[0]) {// 이미지 파일인지 검사
+                // FileReader 인스턴스 생성
+                const reader = new FileReader()
+                // 이미지가 로드가 된 경우
+                reader.onload = e => {
+                    const previewImage = document.getElementById("preview-image")
+                    previewImage.src = e.target.result
+                    //previewImage의 src속성의 결과를
+                }
+                // reader가 이미지 읽도록 하기
+                reader.readAsDataURL(input.files[0])
+            }
+        }
+        // upload file에 change부여
+        const uploadImage = document.getElementById("img-upload-btn")
+        uploadImage.addEventListener("change", e => {
+            imagePreview(e.target)
+        })
+    </script>
+</html>

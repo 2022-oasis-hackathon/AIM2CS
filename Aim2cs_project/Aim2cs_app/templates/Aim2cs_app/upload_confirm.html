@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../../static/Aim2cs_app/css/upload_confirm.css" />
+        <title>AIM2CS</title>
+ 
+    </head>
+    <body>
+        <nav>
+            <a href="../"><img src="../../static/Aim2cs_app/images/logo.png" style="width: 10%;"></a>
+            <a href="../"><img src="../../static/Aim2cs_app/images/uploadf.png" style="float: right; width: 10%;"></a>
+        </nav>
+
+        <div class="upload">
+
+            <div class="upload_img">
+                Upload Media<br>
+                <img src="{{files.uploadedFile.url}}" width="80%">
+            </div>
+            <div class="img_info">
+                {% if files.category == 'image' %}
+                <div class="circle" id="media">#사진</div>
+                {% elif files.category == 'video' %}
+                <div class="circle" id="media">#영상</div>
+                {% endif %}
+
+                {% if files.season == 'spring' %}
+                <div class="circle" id="season">#봄</div>
+                {% elif files.season == 'summer' %}
+                <div class="circle" id="season">#여름</div>
+                {% elif files.season == 'fall' %}
+                <div class="circle" id="season">#가을</div>
+                {% elif files.season == 'winter' %}
+                <div class="circle" id="season">#겨울</div>
+                {% endif %}
+
+                {% if files.weather == 'rain' %}
+                <div class="circle" id="weather">#비</div>
+                {% elif files.weather == 'cloud' %}
+                <div class="circle" id="weather">#구름</div>
+                {% elif files.weather == 'snow' %}
+                <div class="circle" id="weather">#눈</div>
+                {% elif files.weather == 'wind' %}
+                <div class="circle" id="weather">#바람</div>
+                {% elif files.weather == 'sun' %}
+                <div class="circle" id="weather">#해</div>
+                {% endif %}
+            </div>
+
+        </div> 
+        
+    </body>
+</html>
