@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from django.core.files.storage import FileSystemStorage
+from django.db.models import Q
 
 from .models import honam
 import os
 
 # Create your views here.
-
 def main(request):
 	return render(request, 'Aim2cs_app/main.html')
 
@@ -34,3 +34,24 @@ def upload_confirm(request):
 		Honam.save()
 
 		return render(request, 'Aim2cs_app/upload_confirm.html', context={"files": Honam})
+
+def select_view(request):
+	if request.method == 'POST':
+		honam_condition= Q()
+		category_list = request.POST.getlist('category')
+		season_list = request.POST.getlist('season')
+		weather_list = request.POST.getlist('weather')
+
+		if category_list:
+            honam_condition.add(Q(category__in=category_list), Q.AND)
+            honam_db = honam.objects.filter(category__in=category_list).distinct()
+
+        if season_list:
+            honam_condition.add(Q(season__in=season_list), Q.AND)
+            honam_db = honam.objects.filter(season__in=season_list).distinct()
+
+        if weather_list:
+            honam_condition.add(Q(weather__in=weather_list), Q.AND)
+            honam_db = honam.objects.filter(weather__in=weather_list).distinct()
+
+        return render(request, 'Aim2cs_app/select_view.html', context={"honam_db": honam_db})
