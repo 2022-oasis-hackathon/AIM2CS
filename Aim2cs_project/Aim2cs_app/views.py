@@ -1,12 +1,27 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.core.files.storage import FileSystemStorage
 from django.db.models import Q
+from django.contrib import messages
 
 from .models import honam
+from .models import users
 import os
 
 # Create your views here.
 def main(request):
+	if request.method == 'POST':
+		uname = request.POST.get('userid')
+		upasswd = request.POST.get('userpasswd')
+
+		all_user = users.objects.all()
+		if not all_user.filter(username=uname, userpasswd=upasswd).exists(): #아이디 혹은 비밀번호가 틀렸을 때 
+			messages.warning(request, '아이디 혹은 비밀번호가 틀렸습니다')
+			return render(request, 'Aim2cs_app/sign_in.html')
+
+		else:
+			session_id = request.session.get('userid', uname)
+
 	return render(request, 'Aim2cs_app/main.html')
 
 def upload(request):
@@ -19,7 +34,6 @@ def upload_confirm(request):
 		f = request.FILES['file']
 		cnt = len(os.listdir('media/')) + 1
 		f.name = ('%.6d%s' %(cnt, f.name[-4:]))
-		print(f.name)
 
 		category = request.POST.get('category')
 		season = request.POST.get('season')
@@ -66,3 +80,26 @@ def select_view(request):
 		honam_db = honam.objects.filter(honam_condition).distinct()
 
 		return render(request, 'Aim2cs_app/select_view.html', context={"honam_db": honam_db})
+
+def sign_up(request):
+	return render(request, 'Aim2cs_app/sign_up.html')
+
+def sign_in(request):
+
+	#sign up에서 넘어오는 로그인 페이지일 때 
+	if request.method == 'POST':
+		all_user = users.objects.all()
+
+		uname = request.POST.get('userid')
+		if all_user.count() != 0:
+			if all_user.filter(username=uname).exists(): #해당 아이디는 존재하는 아이디임 
+				return render(request, 'Aim2cs_app/sign_up.html', context={"sign_alert": "nop"})
+
+		upasswd = request.POST.get('passwd')
+		newface = users()
+		newface.username = uname
+		newface.userpasswd = upasswd
+		newface.save()
+
+	return render(request, 'Aim2cs_app/sign_in.html', context={"sign_alert": "good"})
+

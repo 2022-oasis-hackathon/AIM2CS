@@ -25,6 +25,8 @@ urlpatterns = [
     path('upload/', views.upload, name='upload'),
     path('upload_confirm/', views.upload_confirm, name='upload_confirm'),
     path('select_view/', views.select_view, name='select_view'),
+    path('sign_up/', views.sign_up, name='sign_up'),
+    path('sign_in/', views.sign_in, name='sign_in'),
 ]
 
 if settings.DEBUG:
