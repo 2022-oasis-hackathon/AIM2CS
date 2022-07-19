@@ -8,3 +8,5 @@ class honam(models.Model):
 	dir_name = models.CharField(max_length=200)
 	season = models.CharField(max_length=10)
 	weather = models.CharField(max_length=20)
+	nature = models.CharField(max_length=20)
+	place = models.CharField(max_length=20)
