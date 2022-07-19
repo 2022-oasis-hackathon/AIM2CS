@@ -48,6 +48,23 @@
                 {% elif files.weather == 'sun' %}
                 <div class="circle" id="weather">#해</div>
                 {% endif %}
+
+                {% if files.nature == 'tree' %}
+                <div class="circle" id="nature">#나무</div>
+                {% elif files.nature == 'moon' %}
+                <div class="circle" id="nature">#달</div>
+                {% elif files.nature == 'flower' %}
+                <div class="circle" id="nature">#꽃</div>
+                {% elif files.nature == 'fallenleaves' %}
+                <div class="circle" id="nature">#낙엽</div>
+                {% elif files.nature == 'Valley' %}
+                <div class="circle" id="nature">#계곡</div>
+                {% elif files.nature == 'mountain' %}
+                <div class="circle" id="nature">#산</div>
+                {% elif files.nature == 'ocean' %}
+                <div class="circle" id="nature">#바다</div>
+                {% endif %}
+
             </div>
 
         </div> 
