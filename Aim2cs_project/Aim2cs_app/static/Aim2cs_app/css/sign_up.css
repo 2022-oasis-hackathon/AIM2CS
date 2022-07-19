@@ -1,0 +1,18 @@
+* {
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+h2 {
+	background-color: skyblue;
+	text-align: center;
+	padding: 15px 0;
+	border-radius: 3px;
+}
+
+#joinform {
+	padding: 20px 20px;
+	border-radius: 8px;
+	margin: auto;
+	width: 50%;
+	background-color: lightblue;
+}
