@@ -48,24 +48,21 @@ def select_view(request):
 		nature_list = request.POST.getlist('nature')
 		place_list = request.POST.getlist('place')
 
-		if category_list:
+		if category_list: #카테고리 
 			honam_condition.add(Q(category__in=category_list), Q.AND)
-			honam_db = honam.objects.filter(category__in=category_list).distinct()
 
-		if season_list:
+		if season_list:	#계절
 			honam_condition.add(Q(season__in=season_list), Q.AND)
-			honam_db = honam.objects.filter(season__in=season_list).distinct()
 
-		if weather_list:
+		if weather_list: #날씨
 			honam_condition.add(Q(weather__in=weather_list), Q.AND)
-			honam_db = honam.objects.filter(weather__in=weather_list).distinct()
 
-		if nature_list:
+		if nature_list: #자연 
 			honam_condition.add(Q(nature__in=nature_list), Q.AND)
-			honam_db = honam.objects.filter(nature__in=weather_list).distinct()
 
-		if place_list:
+		if place_list: #장소 
 			honam_condition.add(Q(place__in=place_list), Q.AND)
-			honam_db = honam.objects.filter(place__in=place_list).distinct()
+		
+		honam_db = honam.objects.filter(honam_condition).distinct()
 
 		return render(request, 'Aim2cs_app/select_view.html', context={"honam_db": honam_db})
