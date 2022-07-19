@@ -5,16 +5,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../../static/Aim2cs_app/css/upload.css" />
-        <title>AIM2CS</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
-        <style>
-            * {
-                font-family: 'Dongle', sans-serif;
 
-            }
-        </style>
+        <title>AIM2CS</title>upload_imag
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
     </head>
     <body>
         <nav>
@@ -25,7 +20,7 @@
         <div class="upload">
 
             <div class="upload_img">
-                <img src="../../static/Aim2cs_app/images/preview.png" id="preview-image" width="90%">
+                <img src="../../static/Aim2cs_app/images/preview.png" id="preview-image" width="40%">
             </div>
 
             <div class="upload_form">
@@ -34,39 +29,43 @@
                     <input type="file" name="file" class="btn none" id="img-upload-btn"> 
                     <br>
                     <br>
-                    <hr>
-                    <input type="radio" id="category" name="category" value="image"><label for = "category">사진</label>
-                    <input type="radio" id="category" name="category" value="video"><label for = "category">영상</label>
-                    <br>
-                    <br>
-                    <hr>
-                    <input type="radio" id="season" name="season" value="spring"><label for = "season">#봄</label>
-                    <input type="radio" id="season" name="season" value="summer"><label for = "season">#여름</label>
-                    <input type="radio" id="season" name="season" value="fall"><label for = "season">#가을</label>
-                    <input type="radio" id="season" name="season" value="winter"><label for = "season">#겨울</label>
-                    
-                    <br>
-                    <hr>
-                    <input type="radio" id="weather" name="weather" value="rain"><label for = "weather">#비</label>
-                    <input type="radio" id="weather" name="weather" value="cloud"><label for = "weather">#구름</label>
-                    <input type="radio" id="weather" name="weather" value="snow"><label for = "weather">#눈</label>
-                    <input type="radio" id="weather" name="weather" value="wind"><label for = "weather">#바람</label>
-                    <input type="radio" id="weather" name="weather" value="sun"><label for = "weather">#해</label>
-                    
-                    <br>
-                    <hr>
-                    <input type="radio" id="nature" name="nature" value="tree"><label for = "nature">#나무</label>
-                    <input type="radio" id="nature" name="nature" value="moon"><label for = "nature">#달</label>
-                    <input type="radio" id="nature" name="nature" value="flower"><label for = "nature">#꽃</label>
-                    <input type="radio" id="nature" name="nature" value="fallenleaves"><label for = "nature">#낙엽</label>
-                    <br>
-                    <hr>
-                    <input type="radio" id="place" name="place" value="vally"><label for = "place">#계곡</label>
-                    <input type="radio" id="place" name="place" value="mountain"><label for = "place">#산</label>
-                    <input type="radio" id="place" name="place" value="ocean"><label for = "place">#바다</label>
-                <br>
-                <hr>
+                    <h1>CATEGORY</h1><br>
+                        <label class="radio_form">
+                        <input type="radio" id="category" name="category" value="image"><span>사진</span></label>
+                        <label class="radio_form">
+                        <input type="radio" id="category" name="category" value="video"><span>영상</span></label>
+                        <br>
+                        <br>
+                        <h1>SEASON</h1><br>
+                        <label class="radio_form"><input type="radio" id="season" name="season" value="spring"><span>#봄</span></label>
+                        <label class="radio_form"><input type="radio" id="season" name="season" value="summer"><span>#여름</span></label>
+                        <label class="radio_form"><input type="radio" id="season" name="season" value="fall"><span>#가을</span></label>
+                        <label class="radio_form"><input type="radio" id="season" name="season" value="winter"><span>#겨울</span></label>
+                        <br>
+                        <br>
+                        <h1>WEATHER</h1><br>
+                        <label class="radio_form"><input type="radio" id="weather" name="weather" value="rain"><span>#비</span></label>
+                        <label class="radio_form"><input type="radio" id="weather" name="weather" value="cloud"><span>#구름</span></label>
+                        <label class="radio_form"><input type="radio" id="weather" name="weather" value="snow"><span>#눈</span></label>
+                        <label class="radio_form"><input type="radio" id="weather" name="weather" value="wind"><span>#바람</span></label>
+                        <label class="radio_form"><input type="radio" id="weather" name="weather" value="sun"><span>#해</span></label>
+                        <br>
+                        <br>
+                        <h1>NATURE</h1><br>
+                        <label class="radio_form"><input type="radio" id="nature" name="nature" value="tree"><span>#나무</span></label>
+                        <label class="radio_form"><input type="radio" id="nature" name="nature" value="moon"><span>#달</span></label>
+                        <label class="radio_form"><input type="radio" id="nature" name="nature" value="flower"><span>#꽃</span></label>
+                        <label class="radio_form"><input type="radio" id="nature" name="nature" value="fallenleaves"><span>#낙엽</span></label>
+                        <br>
+                        <br>
+                        <h1>PLACE</h1><br>
+                        <label class="radio_form"><input type="radio" id="place" name="place" value="vally"><span>#계곡</span></label>
+                        <label class="radio_form"><input type="radio" id="place" name="place" value="mountain"><span>#산</span></label>
+                        <label class="radio_form"><input type="radio" id="place" name="place" value="ocean"><span>#바다</span></label>
 
+                <br>
+                <br>
+                <div class="select_area">
                 <select name="big_area" onchange="categoryChange(this)">
                     <option>선택해주세요</option>
                     <option value="a">전라북도</option>
@@ -77,9 +76,16 @@
                 <select name="small_area" id="good">
                 <option>선택해주세요</option>
                 </select>
+                
+                상세주소 : <input type="text" name = "detail_area" size = "45">
                 <br>
+                <br>
+                설명 <br>
+                <textarea name = "explanation" rows="10" cols="50"></textarea> 
+                </div>
                 <hr>
                 <input type="submit" button type="button" class="ok" onclick="location.href='../upload_confirm/'" value="UPLOAD"></button>
+
                 </form>
             </div>
             
