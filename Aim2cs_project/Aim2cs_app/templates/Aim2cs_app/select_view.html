@@ -9,14 +9,17 @@
     </head>
     <body>
         <nav>
-            <a href="/"><img src="../../static/Aim2cs_app/images/logo.png" style="width: 10%;"></a>
-            <a href="upload"><img src="../../static/Aim2cs_app/images/uploadf.png" style="float: right; width: 10%;"></a>
+            <a href="../"><img src="../../static/Aim2cs_app/images/logo.png" style="width: 10%;"></a>
+            <a href="../upload"><img src="../../static/Aim2cs_app/images/uploadf.png" style="float: right; width: 10%;"></a>
         </nav>
 
         {% for honam in honam_db %}
+        <img src="{{honam.uploadedFile.url}}" width="20%">
         {{honam.category}}<br>
         {{honam.season}}<br>
         {{honam.weather}}<br>
+        {{honam.nature}}<br>
+        {{honam.place}}<br>
         {% endfor %}
     </body>
 </html>

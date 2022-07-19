@@ -49,23 +49,23 @@ def select_view(request):
 		place_list = request.POST.getlist('place')
 
 		if category_list:
-            honam_condition.add(Q(category__in=category_list), Q.AND)
-            honam_db = honam.objects.filter(category__in=category_list).distinct()
+			honam_condition.add(Q(category__in=category_list), Q.AND)
+			honam_db = honam.objects.filter(category__in=category_list).distinct()
 
-        if season_list:
-            honam_condition.add(Q(season__in=season_list), Q.AND)
-            honam_db = honam.objects.filter(season__in=season_list).distinct()
+		if season_list:
+			honam_condition.add(Q(season__in=season_list), Q.AND)
+			honam_db = honam.objects.filter(season__in=season_list).distinct()
 
-        if weather_list:
-            honam_condition.add(Q(weather__in=weather_list), Q.AND)
-            honam_db = honam.objects.filter(weather__in=weather_list).distinct()
+		if weather_list:
+			honam_condition.add(Q(weather__in=weather_list), Q.AND)
+			honam_db = honam.objects.filter(weather__in=weather_list).distinct()
 
-        if nature_list:
-            honam_condition.add(Q(nature__in=nature_list), Q.AND)
-            honam_db = honam.objects.filter(nature__in=weather_list).distinct()
+		if nature_list:
+			honam_condition.add(Q(nature__in=nature_list), Q.AND)
+			honam_db = honam.objects.filter(nature__in=weather_list).distinct()
 
-        if place_list:
-            honam_condition.add(Q(place__in=place_list), Q.AND)
-            honam_db = honam.objects.filter(place__in=place_list).distinct()
+		if place_list:
+			honam_condition.add(Q(place__in=place_list), Q.AND)
+			honam_db = honam.objects.filter(place__in=place_list).distinct()
 
-        return render(request, 'Aim2cs_app/select_view.html', context={"honam_db": honam_db})
+		return render(request, 'Aim2cs_app/select_view.html', context={"honam_db": honam_db})

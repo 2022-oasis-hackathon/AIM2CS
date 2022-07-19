@@ -19,9 +19,6 @@ form{
     height: 70px;
     display: inline-block;
 }
-input{
-    display: none;
-}
 span{
     color: white;
     font : italic bold 25px consolas, sans-serif;
@@ -46,6 +43,11 @@ aside{
 p{
     display: inline;
 }
+
+.form input[type=checkbox] {
+    display: none;
+}
+
 .form input[type=checkbox] +label #season{
     background-color: #54BAB9;
     border-radius: 50%;

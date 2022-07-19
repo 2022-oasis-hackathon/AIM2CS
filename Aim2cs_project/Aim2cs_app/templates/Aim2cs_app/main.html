@@ -9,8 +9,8 @@
     </head>
     <body>
         <nav>
-            <a href="main.html"><img src="../../static/Aim2cs_app/images/logo.png" style="width: 15%; padding: 0px; margin: 0px;height: 100px;"></a>
-            <a href="upload.html"><img src="../../static/Aim2cs_app/images/uploadf.png" style="float: right; width: 15%; padding: 0px; margin: 0px; height: 100px;"></a>
+            <a href="./"><img src="../../static/Aim2cs_app/images/logo.png" style="width: 10%;"></a>
+            <a href="../upload"><img src="../../static/Aim2cs_app/images/uploadf.png" style="float: right; width: 10%;"></a>
         </nav>
         <section class="section">
             <img src="../../static/Aim2cs_app/images/logo.png">
@@ -71,30 +71,31 @@
                 <input type="checkbox" id="place3" id="ch" name="place" value="ocean">
                     <label for="place3"><span class="circle" id="place">#바다</span></label>
             </section>
-            <button class="button" type="button"><a href="../select_view.html">Search</a></button>
+            <br>
+            <input type="submit" display button type="button" class="ok" onclick="location.href='../select_view/'" value="SEARCH"></button>
         </form>
-
-        <script>
-            let spanText1=document.getElementById('season');
-            spanText1.addEventListener('click',function(){
-                document.getElementById('check').click();
-            });
-            let spanText2=document.getElementById('type');
-            spanText2.addEventListener('click',function(){
-                document.getElementById('ch').click();
-            });
-            let spanText3=document.getElementById('place');
-            spanText3.addEventListener('click',function(){
-                document.getElementById('ch').click();
-            });
-            let spanText4=document.getElementById('bac');
-            spanText4.addEventListener('click',function(){
-                document.getElementById('ch').click();
-            });
-            let spanText5=document.getElementById('weather');
-            spanText5.addEventListener('click',function(){
-                document.getElementById('ch').click();
-            });
-        </script>
     </body>
+
+    <script>
+        let spanText1=document.getElementById('season');
+        spanText1.addEventListener('click',function(){
+            document.getElementById('check').click();
+        });
+        let spanText2=document.getElementById('type');
+        spanText2.addEventListener('click',function(){
+            document.getElementById('ch').click();
+        });
+        let spanText3=document.getElementById('place');
+        spanText3.addEventListener('click',function(){
+            document.getElementById('ch').click();
+        });
+        let spanText4=document.getElementById('bac');
+        spanText4.addEventListener('click',function(){
+            document.getElementById('ch').click();
+        });
+        let spanText5=document.getElementById('weather');
+        spanText5.addEventListener('click',function(){
+            document.getElementById('ch').click();
+        });
+    </script>
 </html>

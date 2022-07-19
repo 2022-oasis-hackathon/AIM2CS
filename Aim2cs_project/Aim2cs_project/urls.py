@@ -24,7 +24,7 @@ urlpatterns = [
     path('', views.main, name='main'),
     path('upload/', views.upload, name='upload'),
     path('upload_confirm/', views.upload_confirm, name='upload_confirm'),
-    path('select_view/', view.select_view, name='select_view'),
+    path('select_view/', views.select_view, name='select_view'),
 ]
 
 if settings.DEBUG:
