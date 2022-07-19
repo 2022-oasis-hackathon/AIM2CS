@@ -1,5 +1,5 @@
 * {
-    font-family: 'Dongle', sans-serif;
+    font-family: 'Nanum Myeongjo', serif;
 }
 p{
     margin-right: 10%;
@@ -55,7 +55,6 @@ input{
 }
 span{
     color: white;
-    font : italic bold 25px consolas, sans-serif;
 }
 .form{
     display: block;
