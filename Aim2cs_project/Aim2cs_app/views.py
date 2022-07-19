@@ -24,6 +24,8 @@ def upload_confirm(request):
 		category = request.POST.get('category')
 		season = request.POST.get('season')
 		weather = request.POST.get('weather')
+		nature = request.POST.get('nature')
+		place = request.POST.get('place')
 
 		Honam = honam()
 		Honam.uploadedFile = f
@@ -31,6 +33,8 @@ def upload_confirm(request):
 		Honam.dir_name = f.name
 		Honam.season = season
 		Honam.weather = weather
+		Honam.nature = nature
+		Honam.place = place
 		Honam.save()
 
 		return render(request, 'Aim2cs_app/upload_confirm.html', context={"files": Honam})
@@ -41,6 +45,8 @@ def select_view(request):
 		category_list = request.POST.getlist('category')
 		season_list = request.POST.getlist('season')
 		weather_list = request.POST.getlist('weather')
+		nature_list = request.POST.getlist('nature')
+		place_list = request.POST.getlist('place')
 
 		if category_list:
             honam_condition.add(Q(category__in=category_list), Q.AND)
@@ -53,5 +59,13 @@ def select_view(request):
         if weather_list:
             honam_condition.add(Q(weather__in=weather_list), Q.AND)
             honam_db = honam.objects.filter(weather__in=weather_list).distinct()
+
+        if nature_list:
+            honam_condition.add(Q(nature__in=nature_list), Q.AND)
+            honam_db = honam.objects.filter(nature__in=weather_list).distinct()
+
+        if place_list:
+            honam_condition.add(Q(place__in=place_list), Q.AND)
+            honam_db = honam.objects.filter(place__in=place_list).distinct()
 
         return render(request, 'Aim2cs_app/select_view.html', context={"honam_db": honam_db})
