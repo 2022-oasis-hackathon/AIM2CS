@@ -2,11 +2,11 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../../static/Aim2cs_app/css/upload.css" />
 
-        <title>AIM2CS</title>upload_imag
+        <title>AIM2CS</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
@@ -20,75 +20,67 @@
         <div class="upload">
 
             <div class="upload_img">
-                <img src="../../static/Aim2cs_app/images/preview.png" id="preview-image" width="40%">
+                <img src="../../static/Aim2cs_app/images/preview.png" id="preview-image" width="80%">
+                <form action="../upload_confirm/" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" name="file" class="btn none" id="img-upload-btn">
             </div>
 
             <div class="upload_form">
-                <form action="../upload_confirm/" method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <input type="file" name="file" class="btn none" id="img-upload-btn"> 
-                    <br>
-                    <br>
-                    <h1>CATEGORY</h1><br>
-                        <label class="radio_form">
-                        <input type="radio" id="category" name="category" value="image"><span>사진</span></label>
-                        <label class="radio_form">
-                        <input type="radio" id="category" name="category" value="video"><span>영상</span></label>
-                        <br>
-                        <br>
-                        <h1>SEASON</h1><br>
-                        <label class="radio_form"><input type="radio" id="season" name="season" value="spring"><span>#봄</span></label>
-                        <label class="radio_form"><input type="radio" id="season" name="season" value="summer"><span>#여름</span></label>
-                        <label class="radio_form"><input type="radio" id="season" name="season" value="fall"><span>#가을</span></label>
-                        <label class="radio_form"><input type="radio" id="season" name="season" value="winter"><span>#겨울</span></label>
-                        <br>
-                        <br>
-                        <h1>WEATHER</h1><br>
-                        <label class="radio_form"><input type="radio" id="weather" name="weather" value="rain"><span>#비</span></label>
-                        <label class="radio_form"><input type="radio" id="weather" name="weather" value="cloud"><span>#구름</span></label>
-                        <label class="radio_form"><input type="radio" id="weather" name="weather" value="snow"><span>#눈</span></label>
-                        <label class="radio_form"><input type="radio" id="weather" name="weather" value="wind"><span>#바람</span></label>
-                        <label class="radio_form"><input type="radio" id="weather" name="weather" value="sun"><span>#해</span></label>
-                        <br>
-                        <br>
-                        <h1>NATURE</h1><br>
-                        <label class="radio_form"><input type="radio" id="nature" name="nature" value="tree"><span>#나무</span></label>
-                        <label class="radio_form"><input type="radio" id="nature" name="nature" value="moon"><span>#달</span></label>
-                        <label class="radio_form"><input type="radio" id="nature" name="nature" value="flower"><span>#꽃</span></label>
-                        <label class="radio_form"><input type="radio" id="nature" name="nature" value="fallenleaves"><span>#낙엽</span></label>
-                        <br>
-                        <br>
-                        <h1>PLACE</h1><br>
-                        <label class="radio_form"><input type="radio" id="place" name="place" value="vally"><span>#계곡</span></label>
-                        <label class="radio_form"><input type="radio" id="place" name="place" value="mountain"><span>#산</span></label>
-                        <label class="radio_form"><input type="radio" id="place" name="place" value="ocean"><span>#바다</span></label>
-
-                <br>
-                <br>
+                <h1>CATEGORY</h1>
+                <label class="radio_form">
+                <input type="radio" id="category" name="category" value="#사진"><span>사진</span></label>
+                <label class="radio_form">
+                <input type="radio" id="category" name="category" value="#영상"><span>영상</span></label>
+                <hr>
+                <h1>SEASON</h1>
+                <label class="radio_form"><input type="radio" id="season" name="season" value="#봄"><span>#봄</span></label>
+                <label class="radio_form"><input type="radio" id="season" name="season" value="#여름"><span>#여름</span></label>
+                <label class="radio_form"><input type="radio" id="season" name="season" value="#가을"><span>#가을</span></label>
+                <label class="radio_form"><input type="radio" id="season" name="season" value="#겨울"><span>#겨울</span></label>
+                <hr>
+                <h1>WEATHER</h1>
+                <label class="radio_form"><input type="radio" id="weather" name="weather" value="#비"><span>#비</span></label>
+                <label class="radio_form"><input type="radio" id="weather" name="weather" value="#구름"><span>#구름</span></label>
+                <label class="radio_form"><input type="radio" id="weather" name="weather" value="#눈"><span>#눈</span></label>
+                <label class="radio_form"><input type="radio" id="weather" name="weather" value="#바람"><span>#바람</span></label>
+                <label class="radio_form"><input type="radio" id="weather" name="weather" value="#해"><span>#해</span></label>
+                <hr>
+                <h1>NATURE</h1>
+                <label class="radio_form"><input type="radio" id="nature" name="nature" value="#나무"><span>#나무</span></label>
+                <label class="radio_form"><input type="radio" id="nature" name="nature" value="#달"><span>#달</span></label>
+                <label class="radio_form"><input type="radio" id="nature" name="nature" value="#꽃"><span>#꽃</span></label>
+                <label class="radio_form"><input type="radio" id="nature" name="nature" value="#낙엽"><span>#낙엽</span></label>
+            </div>
+            <div class="place_div">
+                <hr>
+                <h1>PLACE</h1>
+                <label class="radio_form"><input type="radio" id="place" name="place" value="#계곡"><span>#계곡</span></label>
+                <label class="radio_form"><input type="radio" id="place" name="place" value="#산"><span>#산</span></label>
+                <label class="radio_form"><input type="radio" id="place" name="place" value="#바다"><span>#바다</span></label>
+                <br><br>
                 <div class="select_area">
                 <select name="big_area" onchange="categoryChange(this)">
                     <option>선택해주세요</option>
-                    <option value="a">전라북도</option>
-                    <option value="b">전라남도</option>
-                    <option value="c">광주광역시</option>
+                    <option value="전라북도">전라북도</option>
+                    <option value="전라남도">전라남도</option>
+                    <option value="광주광역시">광주광역시</option>
                 </select>
-                
+            
                 <select name="small_area" id="good">
-                <option>선택해주세요</option>
+                       <option>선택해주세요</option>
                 </select>
-                
+            
                 상세주소 : <input type="text" name = "detail_area" size = "45">
                 <br>
                 <br>
-                설명 <br>
-                <textarea name = "explanation" rows="10" cols="50"></textarea> 
-                </div>
+                설명<br>
+                <textarea name = "explanation" rows="10" cols="100"></textarea>
+            </div>
                 <hr>
                 <input type="submit" button type="button" class="ok" onclick="location.href='../upload_confirm/'" value="UPLOAD"></button>
-
                 </form>
             </div>
-            
         </div>
     </body>
 
@@ -99,9 +91,9 @@
             var good_c = ["광산구", "남구", "동구", "북구", "서구"];
             var target = document.getElementById("good");
                
-            if(e.value == "a") var d = good_a;
-            else if(e.value == "b") var d = good_b;
-            else if(e.value == "c") var d = good_c;
+            if(e.value == "전라북도") var d = good_a;
+            else if(e.value == "전라남도") var d = good_b;
+            else if(e.value == "광주광역시") var d = good_c;
                 
             target.options.length = 0;
                 

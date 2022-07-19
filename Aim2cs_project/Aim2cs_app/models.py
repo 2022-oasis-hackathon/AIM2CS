@@ -18,3 +18,4 @@ class honam(models.Model):
 	big_area = models.CharField(max_length=20, null = True)
 	small_area = models.CharField(max_length=20, null = True)
 	detail_area = models.TextField()
+	explanation = models.TextField()

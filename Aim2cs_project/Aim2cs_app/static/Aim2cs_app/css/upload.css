@@ -7,6 +7,7 @@ nav {
 	height: 10%;
 	background-color: aliceblue;
 	margin-bottom: 4%;
+    position: fixed;
 }
 
 .upload {
@@ -14,26 +15,36 @@ nav {
 	text-align: center;
 	display: block;
 	justify-content: center;
-    padding: auto;
 	width: 100%;
 	height: 90%;
+    padding-top: 10%;
 }
 
 .upload_img {
 	display: inline-block;
-    margin: 10%;
-    transform: translateY(-230%);
+    text-align: center;
+    width: 50%;
+    vertical-align:top;
+    padding-top: 3%;
 }
 
 .upload_form {
-	width: 30%;
+	width: 40%;
 	display: inline-block;
     text-align: left;
-    margin: 0 auto;
+    margin: 1%;
+}
+
+.place_div {
+    width: 60%;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+    margin-top: 3%;
 }
 
 .radio_form {
-    padding: 15px 10px;
+    padding: 1% 1%;
 }
 .radio_form input[type=radio]{
     display: none;
@@ -59,12 +70,19 @@ nav {
     color: #fff;
 }
 
-.select_area {width: 100%; padding: .8em .5em; 
-    border: 1px solid #999;font-family: inherit;  
-    background: url('arrow.jpg') no-repeat 95% 50%; border-radius: 0px; 
-    -webkit-appearance: none; -moz-appearance: none;appearance: none;}
+.select_area {
+    width: 100%; 
+    padding: 3%;
+    border: 2px solid #999;
+    font-family: inherit;  
+    border-radius: 0px; 
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+    text-align: left;
+}
 
-.select_area::-ms-expand {    display: none;}
+.select_area::-ms-expand {display: none;}
 
 
 

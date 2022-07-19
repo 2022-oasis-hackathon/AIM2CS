@@ -20,7 +20,7 @@ def main(request):
 			return render(request, 'Aim2cs_app/sign_in.html')
 
 		else:
-			session_id = request.session.get('userid', uname)
+			request.session['userid'] = uname
 
 	return render(request, 'Aim2cs_app/main.html')
 
@@ -40,15 +40,17 @@ def upload_confirm(request):
 		weather = request.POST.get('weather')
 		nature = request.POST.get('nature')
 		place = request.POST.get('place')
+		big_area = request.POST.get('big_area')
+		small_area = request.POST.get('small_area')
+		detail_area = request.POST.get('detail_area')
+		explanation = request.POST.get('explanation')
 
-		Honam = honam()
-		Honam.uploadedFile = f
-		Honam.category = category
-		Honam.dir_name = f.name
-		Honam.season = season
-		Honam.weather = weather
-		Honam.nature = nature
-		Honam.place = place
+		uname = request.session['userid']
+
+		Honam = honam(username=users.objects.get(username=uname), uploadedFile=f,\
+		 category=category, dir_name=f.name, season=season, weather=weather, nature=nature, \
+		 place=place, big_area=big_area, small_area=small_area, detail_area=detail_area, \
+		 explanation=explanation)
 		Honam.save()
 
 		return render(request, 'Aim2cs_app/upload_confirm.html', context={"files": Honam})
