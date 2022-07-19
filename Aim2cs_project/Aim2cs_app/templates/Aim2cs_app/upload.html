@@ -6,8 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../../static/Aim2cs_app/css/upload.css" />
         <title>AIM2CS</title>
-        <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+        <style>
+            * {
+                font-family: 'Dongle', sans-serif;
 
+            }
+        </style>
     </head>
     <body>
         <nav>
@@ -24,18 +31,20 @@
             <div class="upload_form">
                 <form action="../upload_confirm/" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
-                    <br>
-                    <input type="radio" id="category" name="category" value="image">사진<br>
+                    <input type="radio" id="category" name="category" value="image">사진
                     <input type="radio" id="category" name="category" value="video">영상
+                    <br>
                     <br>
                     <hr>
                     <input type="file" name="file" class="btn none" id="img-upload-btn">    
+                    <br>
                     <br>
                     <hr>
                     <input type="radio" id="season" name="season" value="spring">#봄
                     <input type="radio" id="season" name="season" value="summer">#여름
                     <input type="radio" id="season" name="season" value="fall">#가을
                     <input type="radio" id="season" name="season" value="winter">#겨울
+                    
                     <br>
                     <hr>
                     <input type="radio" id="weather" name="weather" value="rain">#비
@@ -43,26 +52,31 @@
                     <input type="radio" id="weather" name="weather" value="snow">#눈
                     <input type="radio" id="weather" name="weather" value="wind">#바람
                     <input type="radio" id="weather" name="weather" value="sun">#해
+                    
                     <br>
                     <hr>
                     <input type="radio" id="nature" name="nature" value="tree">#나무
                     <input type="radio" id="nature" name="nature" value="moon">#달
                     <input type="radio" id="nature" name="nature" value="flower">#꽃
                     <input type="radio" id="nature" name="nature" value="fallenleaves">#낙엽
-                    <input type="radio" id="nature" name="nature" value="vally">#계곡
-                    <input type="radio" id="nature" name="nature" value="mountain">#산
-                    <input type="radio" id="nature" name="nature" value="ocean">#바다
+                    <br>
+                    <hr>
+                    <input type="radio" id="place" name="place" value="vally">#계곡
+                    <input type="radio" id="place" name="place" value="mountain">#산
+                    <input type="radio" id="place" name="place" value="ocean">#바다
+
                 </form>
+                <br>
                 <hr>
 
-                <select onchange="categoryChange(this)">
+                <select name="big_area" onchange="categoryChange(this)">
                     <option>선택해주세요</option>
                     <option value="a">전라북도</option>
                     <option value="b">전라남도</option>
                     <option value="c">광주광역시</option>
                 </select>
                 
-                <select id="good">
+                <select name="small_area" id="good">
                 <option>선택해주세요</option>
                 </select>
                 <script>
@@ -86,11 +100,7 @@
                     }
                 }
                 </script>
-                상세주소 입력 <input type="text">
                 <br>
-                <div class="">
-
-                </div>
                 <hr>
                 <input type="submit" button type="button" class="ok" onclick="location.href='../upload_confirm/'" value="UPLOAD"></button>
             </div>
