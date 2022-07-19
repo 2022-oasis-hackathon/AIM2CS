@@ -57,11 +57,13 @@
                 <div class="circle" id="nature">#꽃</div>
                 {% elif files.nature == 'fallenleaves' %}
                 <div class="circle" id="nature">#낙엽</div>
-                {% elif files.nature == 'Valley' %}
+                {% endif %}
+
+                {% if files.place == 'valley' %}
                 <div class="circle" id="nature">#계곡</div>
-                {% elif files.nature == 'mountain' %}
+                {% elif files.place == 'mountain' %}
                 <div class="circle" id="nature">#산</div>
-                {% elif files.nature == 'ocean' %}
+                {% elif files.place == 'ocean' %}
                 <div class="circle" id="nature">#바다</div>
                 {% endif %}
 
