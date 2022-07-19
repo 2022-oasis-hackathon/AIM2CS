@@ -6,96 +6,114 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../../static/Aim2cs_app/css/main.css" />
         <title>AIM2CS</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+    
+        
+            <script src="https://cdn.jsdelivr.net/gh/hiphop5782/js@0.0.6/typing/hakademy-typing.js"></script>
+    <script>
+        window.addEventListener("load", function(){
+            var tag = document.querySelector(".typing");
+            var app = new Hakademy.util.typing(tag, {
+                text:[
+                    "호남을 모으다. 호람모람. 이 호람모람은 저희 호남지역의 아름다움을 이미지와 영상 등으로 담아 모든 사람들이 자유롭게 확인할 수 있도록 하는 사이트입니다."
+                ],
+                color:{
+                    apply:false
+                }
+            });
+        });
+    </script>    
+    
+    
     </head>
     <body>
         <nav>
-            <a href="./"><img src="../../static/Aim2cs_app/images/logo.png" style="width: 10%;"></a>
-            <a href="../upload"><img src="../../static/Aim2cs_app/images/uploadf.png" style="float: right; width: 10%;"></a>
+            <a href="./"><img src="../../static/Aim2cs_app/images/logo.png" style="width: 15%; padding: 0px; margin: 0px;height: 100px;"></a>
+            <a href="../upload"><img src="../../static/Aim2cs_app/images/uploadf.png" style="float: right; width: 15%; padding: 0px; margin: 0px; height: 100px;"></a>
         </nav>
+        <div class="back">
         <section class="section">
-            <img src="../../static/Aim2cs_app/images/logo.png">
+            <img src="../../static/Aim2cs_app/images/teamlogo.png" style="width:50%; height: auto;">
         </section>
-        <aside>
-            <p>아아아르헨티나 룩룩룩셈부르크 아아아르헨티나
-                소크라테스 플라톤 아리스토텔레스
-                기아타이거즈는 가을야구를 갈까요?
-                흠.... 전 그래도 광주 사람이니 간다고 믿어볼게요
-            </p>
+        <aside> 
+            <p class="typing" style="font-size: 50px;"></p>
         </aside>
+        </div>
         <form action="../select_view/" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="form">
-                <input type="checkbox" id="type1" id="ch" name="category" value="image">
+        <div class="form">
+            <input type="checkbox" id="type1" id="ch" name="category" value="image">
                     <label for="type1"><span class="circle" id="type">#사진</span></label>
                 <input type="checkbox" id="type2" id="ch" name="category" value="video">
                     <label for="type2"><span class="circle" id="type">#영상</span></label>
-            </div>
-            <br><br><br>
-            <section class="form">
-                <input type="checkbox" id="season1" id="ch" name="season" value="spring">
-                    <label for="season1" ><span class="circle" id="season">#봄</span></label>
-                <input type="checkbox" id="season2" id="ch" name="season" value="summer">
-                    <label for="season2"><span class="circle" id="season">#여름</span></label>
-                <input type="checkbox" id="season3" id="ch" name="season" value="fall">
-                    <label for="season3"><span class="circle" id="season">#가을</span></label>
-                <input type="checkbox" id="season4" id="ch" name="season" value="winter">
-                    <label for="season4"><span class="circle" id="season">#겨울</span></label>
-            </section>
-            <section class="form">
-                <input type="checkbox" id="weather1" id="ch" name="weather" value="rain">
-                    <label for="weather1"><span class="circle" id="weather">#비</span></label>
-                <input type="checkbox" id="weather2" id="ch" name="weather" value="cloud">
-                    <label for="weather2"><span class="circle" id="weather">#구름</span></label>
-                <input type="checkbox" id="weather3" id="ch" name="weather" value="wind">
-                    <label for="weather3"><span class="circle" id="weather">#바람</span></label>
-                <input type="checkbox" id="weather4" id="ch" name="weather" value="snow">
-                    <label for="weather4"><span class="circle" id="weather">#눈</span></label>
-                <input type="checkbox" id="weather5" id="ch" name="weather" value="sun">
-                    <label for="weather5"><span class="circle" id="weather">#해</span></label>
-            </section>
-            <section class="form">
-                <input type="checkbox" id="bac1" id="ch" name="nature" value="tree">
-                    <label for="bac1"><span class="circle" id="bac">#나무</span></label>
-                <input type="checkbox" id="bac2" id="ch" name="nature" value="moon">
-                    <label for="bac2"><span class="circle" id="bac">#달</span></label>
-                <input type="checkbox" id="bac3" id="ch" name="nature" value="fallenleaves">
-                    <label for="bac3"><span class="circle" id="bac">#낙엽</span></label>
-                <input type="checkbox" id="bac4" id="ch" name="nature" value="flower">
-                    <label for="bac4"><span class="circle" id="bac">#꽃</span></label>
-            </section>
-            <section class="form">
-                <input type="checkbox" id="place1" id="ch" name="place" value="vally">
-                    <label for="place1"><span class="circle" id="place">#계곡</span></label>
-                <input type="checkbox" id="place2" id="ch" name="place" value="mountain">
-                    <label for="place2"><span class="circle" id="place">#산</span></label>
-                <input type="checkbox" id="place3" id="ch" name="place" value="ocean">
-                    <label for="place3"><span class="circle" id="place">#바다</span></label>
-            </section>
-            <br>
-            <input type="submit" display button type="button" class="ok" onclick="location.href='../select_view/'" value="SEARCH"></button>
-        </form>
-    </body>
+        </div>
+        <br><br><br>
+        <section class="form">
+            <input type="checkbox" id="season1" id="ch" name="season" value="spring">
+                <label for="season1" ><span class="circle" id="season">#봄</span></label>
+            <input type="checkbox" id="season2" id="ch" name="season" value="summer">
+                <label for="season2"><span class="circle" id="season">#여름</span></label>
+            <input type="checkbox" id="season3" id="ch" name="season" value="fall">
+                <label for="season3"><span class="circle" id="season">#가을</span></label>
+            <input type="checkbox" id="season4" id="ch" name="season" value="winter">
+                <label for="season4"><span class="circle" id="season">#겨울</span></label>
+        </section>
+        <section class="form">
+            <input type="checkbox" id="weather1" id="ch" name="weather" value="rain">
+                <label for="weather1"><span class="circle" id="weather">#비</span></label>
+            <input type="checkbox" id="weather2" id="ch" name="weather" value="cloud">
+                <label for="weather2"><span class="circle" id="weather">#구름</span></label>
+            <input type="checkbox" id="weather3" id="ch" name="weather" value="wind">
+                <label for="weather3"><span class="circle" id="weather">#바람</span></label>
+            <input type="checkbox" id="weather4" id="ch" name="weather" value="snow">
+                <label for="weather4"><span class="circle" id="weather">#눈</span></label>
+            <input type="checkbox" id="weather5" id="ch" name="weather" value="sun">
+                <label for="weather5"><span class="circle" id="weather">#해</span></label>
+        </section>
+        <section class="form">
+            <input type="checkbox" id="bac1" id="ch" name="nature" value="tree">
+                <label for="bac1"><span class="circle" id="bac">#나무</span></label>
+            <input type="checkbox" id="bac2" id="ch" name="nature" value="moon">
+                <label for="bac2"><span class="circle" id="bac">#달</span></label>
+            <input type="checkbox" id="bac3" id="ch" name="nature" value="fallenleaves">
+                <label for="bac3"><span class="circle" id="bac">#낙엽</span></label>
+            <input type="checkbox" id="bac4" id="ch" name="nature" value="flower">
+                <label for="bac4"><span class="circle" id="bac">#꽃</span></label>
+        </section>
+        <section class="form">
+            <input type="checkbox" id="place1" id="ch" name="place" value="vally">
+                <label for="place1"><span class="circle" id="place">#계곡</span></label>
+            <input type="checkbox" id="place2" id="ch" name="place" value="mountain">
+                <label for="place2"><span class="circle" id="place">#산</span></label>
+            <input type="checkbox" id="place3" id="ch" name="place" value="ocean">
+                <label for="place3"><span class="circle" id="place">#바다</span></label>
+        </section>
 
-    <script>
-        let spanText1=document.getElementById('season');
-        spanText1.addEventListener('click',function(){
-            document.getElementById('check').click();
-        });
-        let spanText2=document.getElementById('type');
-        spanText2.addEventListener('click',function(){
-            document.getElementById('ch').click();
-        });
-        let spanText3=document.getElementById('place');
-        spanText3.addEventListener('click',function(){
-            document.getElementById('ch').click();
-        });
-        let spanText4=document.getElementById('bac');
-        spanText4.addEventListener('click',function(){
-            document.getElementById('ch').click();
-        });
-        let spanText5=document.getElementById('weather');
-        spanText5.addEventListener('click',function(){
-            document.getElementById('ch').click();
-        });
-    </script>
+        <button><input type="submit" display button type="button" class="ok" onclick="location.href='../select_view/'" value="SEARCH">search
+        </form>
+        <script>
+            let spanText1=document.getElementById('season');
+            spanText1.addEventListener('click',function(){
+                document.getElementById('check').click();
+            });
+            let spanText2=document.getElementById('type');
+            spanText2.addEventListener('click',function(){
+                document.getElementById('ch').click();
+            });
+            let spanText3=document.getElementById('place');
+            spanText3.addEventListener('click',function(){
+                document.getElementById('ch').click();
+            });
+            let spanText4=document.getElementById('bac');
+            spanText4.addEventListener('click',function(){
+                document.getElementById('ch').click();
+            });
+            let spanText5=document.getElementById('weather');
+            spanText5.addEventListener('click',function(){
+                document.getElementById('ch').click();
+            });
+        </script>
+    </body>
 </html>
