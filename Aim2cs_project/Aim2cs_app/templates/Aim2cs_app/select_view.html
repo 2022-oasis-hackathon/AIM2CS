@@ -24,18 +24,23 @@
             </div>
         </div>
 
-        {% for honam in honam_db %}
-        <img src="{{honam.uploadedFile.url}}" width="20%">
-        {{honam.username}}<br>
-        {{honam.category}}<br>
-        {{honam.season}}<br>
-        {{honam.weather}}<br>
-        {{honam.nature}}<br>
-        {{honam.place}}<br>
-        {{honam.big_area}}<br>
-        {{honam.small_area}}<br>
-        {{honam.detail_area}}<br>
-        {{honam.explanation}}<br>
-        {% endfor %}
+        <div style="width: 100%; height: 50%; background-color: black;">fads</div>
+
+        <div class="views">
+            {% for honam in honam_db %}
+            <img src="{{honam.uploadedFile.url}}" width="20%">
+            {{honam.username}}<br>
+            {{honam.category}}<br>
+            {{honam.season}}<br>
+            {{honam.weather}}<br>
+            {{honam.nature}}<br>
+            {{honam.place}}<br>
+            {{honam.big_area}}<br>
+            {{honam.small_area}}<br>
+            {{honam.detail_area}}<br>
+            {{honam.explanation}}<br>
+            {% endfor %}
+        </div>
+
     </body>
 </html>
