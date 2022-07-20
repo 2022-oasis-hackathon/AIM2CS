@@ -1,10 +1,54 @@
-nav {
+.nav {
+    margin-bottom: 4%;
     width: 100%;
-	height: 10%;
-	background-color: aliceblue;
-	margin-bottom: 4%;
+    height: 10%;
+    background-color: #4D6E4A;
+    display: flex;
+    align-items : center;
+    padding: 0px;
+    margin: 0px;
+    position: fixed;
+    opacity: 0.9;
 }
-
+.nav-item {
+    font-size: 18pt;
+    font-weight: bolder;
+    text-align: right;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+}
+.session_id {
+    font-size: 15pt;
+    font-weight: bolder;
+    text-align: right;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+}
+.nav-items {
+    display: flex;
+    color: white;
+    margin-left: auto;
+    margin-right: 1%;
+    cursor: pointer;
+}
+.nav-item:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: aquamarine;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+.nav-item:hover:after { 
+    width: 100%; 
+    left: 0; 
+}
 .select_box {
     text-align: center;
 }

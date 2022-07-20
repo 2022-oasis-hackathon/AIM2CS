@@ -22,7 +22,9 @@ def main(request):
 		else:
 			request.session['userid'] = uname
 
-	return render(request, 'Aim2cs_app/main.html')
+	session_tf = request.session.get('userid', False)
+
+	return render(request, 'Aim2cs_app/main.html', context={"session_tf": session_tf})
 
 def upload(request):
 	return render(request, 'Aim2cs_app/upload.html')
