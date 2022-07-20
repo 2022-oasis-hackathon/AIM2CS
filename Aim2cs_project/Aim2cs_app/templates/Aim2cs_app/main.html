@@ -50,54 +50,59 @@
         </div>
         <form action="../select_view/" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-        <div class="form">
-            <input type="checkbox" id="type1" id="ch" name="category" value="#사진">
-                    <label for="type1"><span class="circle" id="type">#사진</span></label>
-                <input type="checkbox" id="type2" id="ch" name="category" value="#영상">
-                    <label for="type2"><span class="circle" id="type">#영상</span></label>
-        </div>
-        <br><br><br>
-        <section class="form">
-            <input type="checkbox" id="season1" id="ch" name="season" value="#봄">
-                <label for="season1" ><span class="circle" id="season">#봄</span></label>
-            <input type="checkbox" id="season2" id="ch" name="season" value="#여름">
-                <label for="season2"><span class="circle" id="season">#여름</span></label>
-            <input type="checkbox" id="season3" id="ch" name="season" value="#가을">
-                <label for="season3"><span class="circle" id="season">#가을</span></label>
-            <input type="checkbox" id="season4" id="ch" name="season" value="#겨울">
-                <label for="season4"><span class="circle" id="season">#겨울</span></label>
-        </section>
-        <section class="form">
-            <input type="checkbox" id="weather1" id="ch" name="weather" value="#비">
-                <label for="weather1"><span class="circle" id="weather">#비</span></label>
-            <input type="checkbox" id="weather2" id="ch" name="weather" value="#구름">
-                <label for="weather2"><span class="circle" id="weather">#구름</span></label>
-            <input type="checkbox" id="weather3" id="ch" name="weather" value="#바람">
-                <label for="weather3"><span class="circle" id="weather">#바람</span></label>
-            <input type="checkbox" id="weather4" id="ch" name="weather" value="#눈">
-                <label for="weather4"><span class="circle" id="weather">#눈</span></label>
-            <input type="checkbox" id="weather5" id="ch" name="weather" value="#해">
-                <label for="weather5"><span class="circle" id="weather">#해</span></label>
-        </section>
-        <section class="form">
-            <input type="checkbox" id="bac1" id="ch" name="nature" value="#나무">
-                <label for="bac1"><span class="circle" id="bac">#나무</span></label>
-            <input type="checkbox" id="bac2" id="ch" name="nature" value="#달">
-                <label for="bac2"><span class="circle" id="bac">#달</span></label>
-            <input type="checkbox" id="bac3" id="ch" name="nature" value="#낙엽">
-                <label for="bac3"><span class="circle" id="bac">#낙엽</span></label>
-            <input type="checkbox" id="bac4" id="ch" name="nature" value="#꽃">
-                <label for="bac4"><span class="circle" id="bac">#꽃</span></label>
-        </section>
-        <section class="form">
-            <input type="checkbox" id="place1" id="ch" name="place" value="#계곡">
-                <label for="place1"><span class="circle" id="place">#계곡</span></label>
-            <input type="checkbox" id="place2" id="ch" name="place" value="#산">
-                <label for="place2"><span class="circle" id="place">#산</span></label>
-            <input type="checkbox" id="place3" id="ch" name="place" value="#바다">
-                <label for="place3"><span class="circle" id="place">#바다</span></label>
-        </section>
-
+            <div class="form">
+                <h1>CATEGORY</h1>
+                <input type="checkbox" id="type1" id="ch" name="category" value="#사진">
+                        <label for="type1"><span class="circle" id="type">#사진</span></label>
+                    <input type="checkbox" id="type2" id="ch" name="category" value="#영상">
+                        <label for="type2"><span class="circle" id="type">#영상</span></label>
+            </div>
+            <br><br><br>
+            <div class="form">
+                <h1>SEASON</h1>
+                <div class="block">
+                <input type="checkbox" id="season1" id="ch" name="season" value="#봄">
+                    <label for="season1" ><span class="circle" id="season">#봄</span></label>
+                <input type="checkbox" id="season2" id="ch" name="season" value="#여름">
+                    <label for="season2"><span class="circle" id="season">#여름</span></label>
+                <input type="checkbox" id="season3" id="ch" name="season" value="#가을">
+                    <label for="season3"><span class="circle" id="season">#가을</span></label>
+                <input type="checkbox" id="season4" id="ch" name="season" value="#겨울">
+                    <label for="season4"><span class="circle" id="season">#겨울</span></label></div>
+            </div>
+            <div class="form">
+                <h1>WEATHER</h1>
+                <input type="checkbox" id="weather1" id="ch" name="weather" value="#비">
+                    <label for="weather1"><span class="circle" id="weather">#비</span></label>
+                <input type="checkbox" id="weather2" id="ch" name="weather" value="#구름">
+                    <label for="weather2"><span class="circle" id="weather">#구름</span></label>
+                <input type="checkbox" id="weather3" id="ch" name="weather" value="#바람">
+                    <label for="weather3"><span class="circle" id="weather">#바람</span></label>
+                <input type="checkbox" id="weather4" id="ch" name="weather" value="#눈">
+                    <label for="weather4"><span class="circle" id="weather">#눈</span></label>
+                <input type="checkbox" id="weather5" id="ch" name="weather" value="#해">
+                    <label for="weather5"><span class="circle" id="weather">#해</span></label>
+            </div>
+            <div class="form">
+                <h1>NATURE</h1>
+                <input type="checkbox" id="bac1" id="ch" name="nature" value="#나무">
+                    <label for="bac1"><span class="circle" id="bac">#나무</span></label>
+                <input type="checkbox" id="bac2" id="ch" name="nature" value="#달">
+                    <label for="bac2"><span class="circle" id="bac">#달</span></label>
+                <input type="checkbox" id="bac3" id="ch" name="nature" value="#낙엽">
+                    <label for="bac3"><span class="circle" id="bac">#낙엽</span></label>
+                <input type="checkbox" id="bac4" id="ch" name="nature" value="#꽃">
+                    <label for="bac4"><span class="circle" id="bac">#꽃</span></label>
+            </div>
+            <div class="form">
+                <h1>PLACE</h1>
+                <input type="checkbox" id="place1" id="ch" name="place" value="#계곡">
+                    <label for="place1"><span class="circle" id="place">#계곡</span></label>
+                <input type="checkbox" id="place2" id="ch" name="place" value="#산">
+                    <label for="place2"><span class="circle" id="place">#산</span></label>
+                <input type="checkbox" id="place3" id="ch" name="place" value="#바다">
+                    <label for="place3"><span class="circle" id="place">#바다</span></label>
+            </div>
         <button><input type="submit" display button type="button" class="ok" onclick="location.href='../select_view/'" value="SEARCH">search
         </form>
         <script>

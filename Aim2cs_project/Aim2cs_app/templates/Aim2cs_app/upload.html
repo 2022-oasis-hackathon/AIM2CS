@@ -32,12 +32,13 @@
 
             <div class="upload_img">
                 <img src="../../static/Aim2cs_app/images/preview.png" id="preview-image" width="80%">
+                
                 <form action="../upload_confirm/" method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
+                    {% csrf_token %} 
                     <div class = "filebox">
-                        <label for = "file">파일 찾기</label>
-                    <input type="file" name="file" class="btn none" id="img-upload-btn">
-                </div>
+                        <input class="upload-name" value="첨부파일" placeholder="첨부파일">
+                        <label><input type="file" name="file" id="img-upload-btn">파일 찾기</label>
+                    </div>
             </div>
 
             <div class="upload_form">

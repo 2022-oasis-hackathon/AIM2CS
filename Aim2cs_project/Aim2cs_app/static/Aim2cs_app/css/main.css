@@ -1,9 +1,24 @@
 * {
     font-family: 'Nanum Myeongjo', serif;
 }
+.block{display: inline;}
 p{
     margin-right: 10%;
+    display: inline-block;
+    font-size: 150%;
 }
+h1{display: inline;
+    margin-left: 7%;
+    margin-right: 5%;
+}
+input{
+    width: 10%;
+}
+span{
+    text-align: center;
+    font-size: 200%;
+}
+
 html body{
     margin: 0;
     padding: 0;
@@ -74,8 +89,9 @@ form{
 }
 .circle{
     margin: 1%;
-    border-radius: 50%;
-    width: 12%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #333;
     height: 70px;
     display: inline-block;
 }
@@ -88,10 +104,8 @@ button{
     right: 1%;
     bottom: 1%;
     font-size: 40px;
-    background-color: darkblue;
-    border-radius: 50%;
+    background-color: #4D6E4A;
     color: white;
-    border-color: darkblue;
 }
 input{
     display: none;
@@ -101,7 +115,7 @@ span{
 }
 .form{
     display: block;
-    text-align: center;
+    text-align: left;
 }
 .section{
     display: inline-block;
@@ -116,13 +130,9 @@ aside{
     font-size: 25px;
     margin-top: 5%;
 }
-p{
-    display: inline-block;
-    font-size: 150%;
-}
 .form input[type=checkbox] +label #season{
-    background-color: #54BAB9;
-    border-radius: 50%;
+    background-color: #fff;
+    color: #333;
     width: 9%;
     height: auto;
     display: inline-block;
@@ -131,9 +141,9 @@ p{
     cursor: pointer;
 }
 .form input[type=checkbox]+label #weather{
-    background-color: #18978F;
-    border-radius: 50%;
-    width: 9%;
+    background-color: #fff;
+    color: #333;
+   width: 9%;
     height: auto;
     display: inline-block;
     margin: 1%;
@@ -141,8 +151,8 @@ p{
     cursor: pointer;
 }
 .form input[type=checkbox]+label #bac{
-    background-color: #ADCF9F;
-    border-radius: 50%;
+    background-color: #fff;
+    color: #333;
     width: 9%;
     height: auto;
     display: inline-block;
@@ -151,8 +161,8 @@ p{
     cursor: pointer;
 }
 .form input[type=checkbox]+label #place{
-    background-color: #4CACBC;
-    border-radius: 50%;
+    background-color: #fff;
+    color: #333;
     width: 9%;
     height: auto;
     display: inline-block;
@@ -161,8 +171,8 @@ p{
     cursor: pointer;
 }
 .form input[type=checkbox]+label #type{
-    background-color: #53BF9D;
-    border-radius: 50%;
+    background-color: #fff;
+    color: #333;
     width: 9%;
     height: auto;
     display: inline-block;
@@ -171,32 +181,37 @@ p{
     cursor: pointer;
 }
 .form input[type=checkbox]:checked + label #type{
-    background-color: #3AB0FF;
+    background-color: #333;
+    color: #fff;
 }
 .form input[type=checkbox]:checked + label #season{
-    background-color: #3AB0FF;
+    background-color: #333;
+    color: #fff;
 }
 .form input[type=checkbox]:checked + label #weather{
-    background-color: #3AB0FF;
+    background-color: #333;
+    color: #fff;
 }
 .form input[type=checkbox]:checked + label #place{
-    background-color: #3AB0FF;
+    background-color: #333;
+    color: #fff;
 }
 .form input[type=checkbox]:checked + label #bac{
-    background-color: #3AB0FF;
+    background-color: #333;
+    color: #fff;
 }
 .form input[type=checkbox]:hover+label #type{
-    background-color: #5FD068;
+    background-color: rgb(180, 179, 179);
 }
 .form input[type=checkbox]:hover+label #bac{
-    background-color: #5FD068;
+    background-color: rgb(180, 179, 179);
 }
 .form input[type=checkbox]:hover+label #place{
-    background-color: #5FD068;
+    background-color: rgb(180, 179, 179);
 }
 .form input[type=checkbox]:hover+label #weather{
-    background-color: #5FD068;
+    background-color: rgb(180, 179, 179);
 }
 .form input[type=checkbox]:hover+label #season{
-    background-color: #5FD068;
+    background-color: rgb(180, 179, 179);
 }
