@@ -15,14 +15,17 @@
         <div class="nav">
             <a href="../"><img src="../../static/Aim2cs_app/images/logo.png" style="width: 15%; margin-left: 1%;"></a>
             <div class="nav-items">
-            <div class="nav-item"><a href="../sign_in" style="color: inherit; text-decoration: none;">Sign in</a></div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="nav-item"><a href="../sign_up" style="color: inherit; text-decoration: none;">Sign up</a></div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="session_id">&nbsp;&nbsp;{{request.session.userid}}&nbsp;&nbsp;</div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="nav-item"><a href="../upload" style="color: inherit; text-decoration: none;">Upload</a></div>
-        </div>
+                {% if session_tf == False %}
+                <div class="nav-item"><a href="../sign_in" style="color: inherit; text-decoration: none;">Sign in</a></div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="nav-item"><a href="../sign_up" style="color: inherit; text-decoration: none;">Sign up</a></div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                {% else %}
+                <div class="session_id">{{request.session.userid}} 님</div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                {% endif %}
+                <div class="nav-item"><a href="./" style="color: inherit; text-decoration: none;">Upload</a></div>
+            </div>
         </div>
 
         <div class="upload">
@@ -81,11 +84,15 @@
                 상세주소 : <input type="text" name = "detail_area" size = "45">
                 <br>
                 <br>
-                설명<br>
-                <textarea name = "explanation" rows="10" cols="100"></textarea>
-            </div>
-                <hr>
-                <input type="submit" button type="button" class="ok" onclick="location.href='../upload_confirm/'" value="UPLOAD"></button>
+                설명<br><br>
+                <textarea name = "explanation"></textarea>
+                </div>
+            
+            <br><br><br><br>
+                
+                <input type="submit" display button type="button" class="ok" onclick="location.href='../upload_confirm/'" value="UPLOAD">
+                <br><br><br>
+            
                 </form>
             </div>
         </div>

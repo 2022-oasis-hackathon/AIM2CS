@@ -19,3 +19,4 @@ class honam(models.Model):
 	small_area = models.CharField(max_length=20, null = True)
 	detail_area = models.TextField()
 	explanation = models.TextField()
+	likenum = models.IntegerField(default=0)

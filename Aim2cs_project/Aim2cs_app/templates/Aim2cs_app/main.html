@@ -8,47 +8,36 @@
         <title>AIM2CS</title>
         <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet">
             <script src="https://cdn.jsdelivr.net/gh/hiphop5782/js@0.0.6/typing/hakademy-typing.js"></script>
-    <script>
-        window.addEventListener("load", function(){
-            var tag = document.querySelector(".typing");
-            var app = new Hakademy.util.typing(tag, {
-                text:[
-                    "호남을 이따금씩 한데 모으다. 호람모람. 이 호람모람은 저희 호남지역의 아름다움을 이미지와 영상 등으로 담아 모든 사람들이 자유롭게 확인할 수 있도록 하는 사이트입니다."
-                ],
-                color:{
-                    apply:false
-                }
-            });
-        });
-    </script>    
-    
-    
     </head>
     <body>
         <div class="nav">
             <a href="./"><img src="../../static/Aim2cs_app/images/logo.png" style="width: 15%; margin-left: 1%;"></a>
             <div class="nav-items">
-            <div class="nav-item"><a href="../sign_in" style="color: inherit; text-decoration: none;">Sign in</a></div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="nav-item"><a href="../sign_up" style="color: inherit; text-decoration: none;">Sign up</a></div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="session_id">&nbsp;&nbsp;{{request.session.userid}}&nbsp;&nbsp;</div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="nav-item"><a href="../upload" style="color: inherit; text-decoration: none;">Upload</a></div>
-        </div>
+                <div class="nav-item"><a href="../sign_in" style="color: inherit; text-decoration: none;">Sign in</a></div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="nav-item"><a href="../sign_up" style="color: inherit; text-decoration: none;">Sign up</a></div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="session_id">{{request.session.userid}}&nbsp;&nbsp;</div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="nav-item"><a href="upload" style="color: inherit; text-decoration: none;">Upload</a></div>
+            </div>
         </div>
         <div class="back">
         <section class="section">
             <img src="../../static/Aim2cs_app/images/teamlogo.png" style="width:50%; height: auto;">
         </section>
         <aside> 
-            <p class="typing" style="font-size: 50px;"></p>
+            <p class="line1">호남을 이따금씩 한데 모으다.</p><br>
+            <h1 class="h1">호남모람</h1>
+            <p class="line2"> 이 호람모람은 저희 호남지역의 아름다움을</p>
+            <p class="line">이미지와 영상 등으로 담아 모든 사람들이 </p>
+            <p class="line">자유롭게 확인할 수 있도록 하는 사이트입니다.</p>
         </aside>
         </div>
         <form action="../select_view/" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form">
-                <h1>CATEGORY</h1>
+                <h2>CATEGORY</h2>
                 <input type="checkbox" id="type1" id="ch" name="category" value="#사진">
                         <label for="type1"><span class="circle" id="type">#사진</span></label>
                     <input type="checkbox" id="type2" id="ch" name="category" value="#영상">
@@ -56,7 +45,7 @@
             </div>
             <br><br><br>
             <div class="form">
-                <h1>SEASON</h1>
+                <h2>SEASON</h2>
                 <div class="block">
                 <input type="checkbox" id="season1" id="ch" name="season" value="#봄">
                     <label for="season1" ><span class="circle" id="season">#봄</span></label>
@@ -68,7 +57,7 @@
                     <label for="season4"><span class="circle" id="season">#겨울</span></label></div>
             </div>
             <div class="form">
-                <h1>WEATHER</h1>
+                <h2>WEATHER</h2>
                 <input type="checkbox" id="weather1" id="ch" name="weather" value="#비">
                     <label for="weather1"><span class="circle" id="weather">#비</span></label>
                 <input type="checkbox" id="weather2" id="ch" name="weather" value="#구름">
@@ -81,7 +70,7 @@
                     <label for="weather5"><span class="circle" id="weather">#해</span></label>
             </div>
             <div class="form">
-                <h1>NATURE</h1>
+                <h2>NATURE</h2>
                 <input type="checkbox" id="bac1" id="ch" name="nature" value="#나무">
                     <label for="bac1"><span class="circle" id="bac">#나무</span></label>
                 <input type="checkbox" id="bac2" id="ch" name="nature" value="#달">
@@ -92,16 +81,10 @@
                     <label for="bac4"><span class="circle" id="bac">#꽃</span></label>
             </div>
             <div class="form">
-                <h1>PLACE</h1>
-                <input type="checkbox" id="place1" id="ch" name="place" value="#계곡">
-                    <label for="place1"><span class="circle" id="place">#계곡</span></label>
-                <input type="checkbox" id="place2" id="ch" name="place" value="#산">
-                    <label for="place2"><span class="circle" id="place">#산</span></label>
-                <input type="checkbox" id="place3" id="ch" name="place" value="#바다">
-                    <label for="place3"><span class="circle" id="place">#바다</span></label>
-            </div>
-        <button><input type="submit" display button type="button" class="ok" onclick="location.href='../select_view/'" value="SEARCH">search
-        </form>
+
+        <button><input type="submit" display button type="button" class="ok" onclick="location.href='../select_view/'" value="SEARCH">SEARCH
+        
+    </form>
         <script>
             let spanText1=document.getElementById('season');
             spanText1.addEventListener('click',function(){

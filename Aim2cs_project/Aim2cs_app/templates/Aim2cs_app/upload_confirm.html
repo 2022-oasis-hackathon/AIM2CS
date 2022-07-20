@@ -12,33 +12,40 @@
         <div class="nav">
             <a href="../"><img src="../../static/Aim2cs_app/images/logo.png" style="width: 15%; margin-left: 1%;"></a>
             <div class="nav-items">
-            <div class="nav-item"><a href="../sign_in" style="color: inherit; text-decoration: none;">Sign in</a></div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="nav-item"><a href="../sign_up" style="color: inherit; text-decoration: none;">Sign up</a></div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="session_id">&nbsp;&nbsp;{{request.session.userid}}&nbsp;&nbsp;</div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="nav-item"><a href="../upload" style="color: inherit; text-decoration: none;">Upload</a></div>
-        </div>
+                {% if session_tf == False %}
+                <div class="nav-item"><a href="../sign_in" style="color: inherit; text-decoration: none;">Sign in</a></div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="nav-item"><a href="../sign_up" style="color: inherit; text-decoration: none;">Sign up</a></div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                {% else %}
+                <div class="session_id">{{request.session.userid}} 님</div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                {% endif %}
+                <div class="nav-item"><a href="../upload" style="color: inherit; text-decoration: none;">Upload</a></div>
+            </div>
         </div>
 
         <div class="upload">
 
             <div class="upload_img">
-                Upload Media<br>
+                <h2>Upload File</h2>
                 <img src="{{files.uploadedFile.url}}" width="80%">
             </div>
             <div class="img_info">
-                <div class="circle" id="user">{{files.username}}</div>
-                <div class="circle" id="media">{{files.category}}</div>
-                <div class="circle" id="season">{{files.season}}</div>
-                <div class="circle" id="weather">{{files.weather}}</div>
-                <div class="circle" id="nature">{{files.nature}}</div>
-                <div class="circle" id="place">{{files.place}}</div>
-                <div class="circle" id="big_area">{{files.big_area}}</div>
-                <div class="circle" id="small_area">{{files.small_area}}</div>
-                <div class="circle" id="detail_area">{{files.detail_area}}</div>
-                <div class="circle" id="explanation">{{files.explanation}}</div>
+                <h2>CATEGORY : {{files.category}}</h2>
+                <hr>
+                <h2>SEASON : {{files.season}}</h2>
+                <hr>
+                <h2>WEATHER : {{files.weather}}</h2>
+                <hr>
+                <h2>NATURE : {{files.nature}}</h2>
+                <hr>
+                <h2>PLACE</h2>
+                <h3>{{files.big_area}} {{files.small_area}} {{files.detail_area}}</h3>
+                <hr>
+                <h2>설명</h2>
+                <h4>{{files.explanation}}</h4>
+                <hr>
             </div>
 
         </div> 

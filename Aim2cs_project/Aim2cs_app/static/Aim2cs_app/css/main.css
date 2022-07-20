@@ -2,15 +2,46 @@
     font-family: 'Nanum Myeongjo', serif;
 }
 .block{display: inline;}
-p{
-    margin-right: 10%;
+h1{font-size: 500%;}
+h2{font-size: 200%;}
+.line2{margin-top: 0%;}
+.line1 {
     display: inline-block;
-    font-size: 150%;
-}
-h1{display: inline;
-    margin-left: 7%;
-    margin-right: 5%;
-}
+    font-size: 20px;
+    min-width:11px;
+    white-space: nowrap;
+    margin: 0;
+    color: transparent;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    margin-right: 10%;
+    font-size: 200%;
+  }
+  
+  .line1::before {
+    content: "호남을 이따금씩 한데 모으다.";
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 10%;
+    width: 100%;
+    height: 100%;
+    color: black;
+    overflow: hidden;
+    border-right: 1px solid black;
+    animation: typing 5s steps(31);
+  }
+  
+  
+  @keyframes typing{
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
 input{
     width: 10%;
 }
@@ -95,18 +126,43 @@ form{
     height: 70px;
     display: inline-block;
 }
+
 button{
-    width: 7%;
-    height: 7%;
-    display: inline;
-    float: right;
     position: fixed;
+    width: 200px;
+    height: 70px;
+    border: solid 3px;
+    line-height: 10px;
+    font-size: 20px;
+    text-align: center;
+    font-family: sans-serif;
+    text-decoration: none;
+    letter-spacing: 3px;
+    background: #4D6E4A;
+    color: white;
+    float: right;
     right: 1%;
     bottom: 1%;
-    font-size: 40px;
-    background-color: #4D6E4A;
-    color: white;
 }
+
+button:hover{
+    position: fixed;
+    width: 200px;
+    height: 70px;
+    border: solid 3px;
+    line-height: 10px;
+    font-size: 20px;
+    text-align: center;
+    font-family: sans-serif;
+    text-decoration: none;
+    letter-spacing: 3px;
+    background: #ABDEAB;
+    color: black;
+    float: right;
+    right: 1%;
+    bottom: 1%;
+}
+
 input{
     display: none;
 }
@@ -115,13 +171,13 @@ span{
 }
 .form{
     display: block;
-    text-align: left;
+    text-align: center;
 }
 .section{
     display: inline-block;
     width: 50% ;
     text-align:center;
-    margin-top: 7%;
+    margin-top: 4%;
 }
 aside{
     float: right;
@@ -133,7 +189,7 @@ aside{
 .form input[type=checkbox] +label #season{
     background-color: #fff;
     color: #333;
-    width: 9%;
+    width: 7%;
     height: auto;
     display: inline-block;
     margin: 1%;

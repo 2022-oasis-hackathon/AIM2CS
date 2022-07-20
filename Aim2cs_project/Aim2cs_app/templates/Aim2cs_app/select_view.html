@@ -8,61 +8,46 @@
         <title>AIM2CS</title>
     </head>
     <body>
-        <div class="nav">
+        <div class="nav" style="margin-top: 0%;">
             <a href="../"><img src="../../static/Aim2cs_app/images/logo.png" style="width: 15%; margin-left: 1%;"></a>
             <div class="nav-items">
-            <div class="nav-item"><a href="../sign_in" style="color: inherit; text-decoration: none;">Sign in</a></div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="nav-item"><a href="../sign_up" style="color: inherit; text-decoration: none;">Sign up</a></div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="session_id">&nbsp;&nbsp;{{request.session.userid}}&nbsp;&nbsp;</div>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="nav-item"><a href="../upload" style="color: inherit; text-decoration: none;">Upload</a></div>
-        </div>
-        </div>
-
-        <div style="width: 100%; height: 50%; background-color: black;">fads</div>
-
-        <div class="views">
-            <table class="view_table">
-                <thead>
-                    <tr>
-                        <td><B>Select View</B></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for honam in honam_db %}
-                    <tr>
-                        <td>
-                            <div class="view-item">
-                                <form action="../detail_view/" method="POST" enctype="multipart/form-data">
-                                    {% csrf_token %}
-                                    <div class="upload_img"><img src="{{honam.uploadedFile.url}}" width="80%"></div>
-                                    <div class="upload_form">
-                                        <h1>CATEGORY</h1>
-                                        <span style="border: solid 2px; padding: 5px; color: black;">{{honam.category}}</span>
-                                        <hr>
-                                        <h1>SEASON</h1>
-                                        <span style="border: solid 2px; padding: 5px; color: black;">{{honam.season}}</span>
-                                        <hr>
-                                        <h1>WEATHER</h1>
-                                        <span style="border: solid 2px; padding: 5px; color: black;">{{honam.weather}}</span>
-                                        <hr>
-                                        <h1>NATURE</h1>
-                                        <span style="border: solid 2px; padding: 5px; color: black;">{{honam.nature}}</span>
-                                        <hr>
-                                        <h1>PLACE</h1>
-                                        <span style="border: solid 2px; padding: 5px; color: black;">{{honam.place}}</span>
-                                        <hr>
-                                    </div>
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+                {% if session_tf == False %}
+                <div class="nav-item"><a href="../sign_in" style="color: inherit; text-decoration: none;">Sign in</a></div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="nav-item"><a href="../sign_up" style="color: inherit; text-decoration: none;">Sign up</a></div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                {% else %}
+                <div class="session_id">{{request.session.userid}} 님</div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                {% endif %}
+                <div class="nav-item"><a href="../upload" style="color: inherit; text-decoration: none;">Upload</a></div>
+            </div>
         </div>
 
+        <div style="justify-content: center; text-align: center;">
+            <form action="./" method="POST", enctype="multipart/multipart">
+                
+            {% for honam in honam_db %}
+            <div class="upload_form" style="display: inline-block; width: 30%; text-align: center; padding-top: 10%; margin: auto;">
+            <img src="{{honam.uploadedFile.url}}" id="preview-image" width="80%">
+            <h2>CATEGORY : {{honam.category}}</h2>
+            <hr>
+            <h2>SEASON : {{honam.season}}</h2>
+            <hr>
+            <h2>WEATHER : {{honam.weather}}</h2>
+            <hr>
+            <h2>NATURE : {{honam.nature}}</h2>
+            <hr>
+            <h2>PLACE</h2>
+            <h3>{{honam.big_area}} {{honam.small_area}} {{honam.detail_area}}</h3>
+            <hr>
+            <h2>설명</h2>
+            <h4>{{honam.explanation}}</h4>
+            <hr>
+            <h2>❤ {{honam.likenum}}</h2>
+            </div>
+            {% endfor %}
+            </form>
+        </div>
     </body>
 </html>
