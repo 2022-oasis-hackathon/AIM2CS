@@ -1,7 +1,12 @@
 * {
     font-family: 'Nanum Myeongjo', serif;
 }
-
+html body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
 .nav {
     margin-bottom: 4%;
     width: 100%;
@@ -85,6 +90,8 @@
     padding: auto;
     margin: auto;
     margin-top: 3%;
+    font-size: 13px;
+    font-weight:bold;
 }
 
 .radio_form {
@@ -124,10 +131,141 @@
     -moz-appearance: none;
     appearance: none;
     text-align: left;
+    font-size:medium;
 }
 
 .select_area::-ms-expand {display: none;}
 
+c{
+    position: absolute;
+    
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 160px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+    font-family: sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: #ccc;
+  }
+
+
+  c:before{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: #fff;
+    color: #333;
+    transition: 0.5s;
+    transform-origin: bottom;
+    transform: translatey(-100%) rotatex(90deg);
+    border-width: 1px;
+    border-style: solid;
+    border-color:#333;
+  }
+  c:hover:before
+  {
+    transform: translatey(0) rotatex(0deg);
+  }
+  
+  c:after{
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background:  #4D6E4A;
+    color: #fff;
+    transition: 0.5s;
+    transform-origin: top;
+    transform: translatey(0) rotatex(0deg);
+    
+    
+  }
+  c:hover:after
+  {
+    transform: translatey(100%) rotatex(90deg);
+  }
+
+  select {    
+     width: 200px; 
+     padding: .8em .5em;    
+     font-family: inherit; 
+     text-align: center;
+     font-weight:bold;
+     font-size:13px;
+      
+     border: 1px solid #999;    
+     border-radius: 0px;  
+    }
+
+    .select_area input{
+        width: 50%;
+        height: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+        border: solid 2px #333;
+        border-radius: 5px;
+        font-size: 16px;
+        font-family: inherit; 
+        text-align: center;
+        font-weight:bold;
+        
+      }
+
+    .select_area textarea {
+        width: 100%;
+        height: 200px;
+        padding: 10px;
+        box-sizing: border-box;
+        border: solid 2px #333;
+        border-radius: 5px;
+        font-size: 16px;
+        font-family: inherit; 
+        text-align: center;
+        font-weight:bold;
+
+    }
+
+    .filebox {
+        display: inline-block;
+        height: 40px;
+        padding: 0 10px;
+        vertical-align: middle;
+        border: 1px solid #dddddd;
+        width: 78%;
+        color: #999999;
+    }
+    
+    .filebox label {
+        display: inline-block;
+        padding: 10px 20px;
+        color: #fff;
+        vertical-align: middle;
+        background-color: #999999;
+        cursor: pointer;
+        height: 40px;
+        margin-left: 10px;
+    }
+    
+    .filebox input[type="file"] {
+        position: absolute;
+        width: 0;
+        height: 0;
+        padding: 0;
+        overflow: hidden;
+        border: 0;
+    }
 
 
 

@@ -34,7 +34,10 @@
                 <img src="../../static/Aim2cs_app/images/preview.png" id="preview-image" width="80%">
                 <form action="../upload_confirm/" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
+                    <div class = "filebox">
+                        <label for = "file">파일 찾기</label>
                     <input type="file" name="file" class="btn none" id="img-upload-btn">
+                </div>
             </div>
 
             <div class="upload_form">
@@ -63,34 +66,44 @@
                 <label class="radio_form"><input type="radio" id="nature" name="nature" value="#꽃"><span>#꽃</span></label>
                 <label class="radio_form"><input type="radio" id="nature" name="nature" value="#낙엽"><span>#낙엽</span></label>
             </div>
+            
             <div class="place_div">
                 <hr>
+                
                 <h1>PLACE</h1>
                 <label class="radio_form"><input type="radio" id="place" name="place" value="#계곡"><span>#계곡</span></label>
                 <label class="radio_form"><input type="radio" id="place" name="place" value="#산"><span>#산</span></label>
                 <label class="radio_form"><input type="radio" id="place" name="place" value="#바다"><span>#바다</span></label>
                 <br><br>
+
                 <div class="select_area">
-                <select name="big_area" onchange="categoryChange(this)">
+
+                <select name="big_area" onchange="categoryChange(this)" class="select_area2">
                     <option>선택해주세요</option>
                     <option value="전라북도">전라북도</option>
                     <option value="전라남도">전라남도</option>
                     <option value="광주광역시">광주광역시</option>
-                </select>
-            
-                <select name="small_area" id="good">
+                </select></class>
+                &nbsp
+                <select name="small_area" id="good" class="select_area2">
                        <option>선택해주세요</option>
                 </select>
+            <br><br>
             
-                상세주소 : <input type="text" name = "detail_area" size = "45">
+                상세주소 <input type="text" name = "detail_area" size = "45">
                 <br>
                 <br>
-                설명<br>
-                <textarea name = "explanation" rows="10" cols="100"></textarea>
-            </div>
-                <hr>
-                <input type="submit" button type="button" class="ok" onclick="location.href='../upload_confirm/'" value="UPLOAD"></button>
+                설명<br><br>
+                <textarea name = "explanation"></textarea>
+                </div>
+            
+            <br><br><br><br>
+                
+                <c href="#" input type="submit" button type="button" class="btn-hover ok" onclick="location.href='../upload_confirm/'" value="UPLOAD" data-text="UPLOAD">UPLOAD</a>
+            
                 </form>
+                <br><br><br>
+                문의 : 김혜근 상사
             </div>
         </div>
     </body>
