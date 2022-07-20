@@ -11,7 +11,7 @@ import os
 # Create your views here.
 def main(request):
 	if request.method == 'POST':
-		uname = request.POST.get('userid')
+		uname = request.POST.get('loginid')
 		upasswd = request.POST.get('userpasswd')
 
 		all_user = users.objects.all()
@@ -19,12 +19,9 @@ def main(request):
 			messages.warning(request, '아이디 혹은 비밀번호가 틀렸습니다')
 			return render(request, 'Aim2cs_app/sign_in.html')
 
-		else:
-			request.session['userid'] = uname
+		request.session['userid'] = uname
 
-	session_tf = request.session.get('userid', False)
-
-	return render(request, 'Aim2cs_app/main.html', context={"session_tf": session_tf})
+	return render(request, 'Aim2cs_app/main.html')
 
 def upload(request):
 	return render(request, 'Aim2cs_app/upload.html')
@@ -90,20 +87,26 @@ def sign_up(request):
 
 def sign_in(request):
 
-	#sign up에서 넘어오는 로그인 페이지일 때 
-	if request.method == 'POST':
-		all_user = users.objects.all()
+	try:
+		#sign up에서 넘어오는 로그인 페이지일 때 
+		if request.method == 'POST':
+			all_user = users.objects.all()
 
-		uname = request.POST.get('userid')
-		if all_user.count() != 0:
-			if all_user.filter(username=uname).exists(): #해당 아이디는 존재하는 아이디임 
-				return render(request, 'Aim2cs_app/sign_up.html', context={"sign_alert": "nop"})
+			uname = request.POST.get('userid')
+			if uname is None:
+				return render(request, 'Aim2cs_app/sign_in.html')
 
-		upasswd = request.POST.get('passwd')
-		newface = users()
-		newface.username = uname
-		newface.userpasswd = upasswd
-		newface.save()
+			if all_user.count() != 0:
+				if all_user.filter(username=uname).exists(): #해당 아이디는 존재하는 아이디임 
+					return render(request, 'Aim2cs_app/sign_up.html', context={"sign_alert": "nop"})
 
-	return render(request, 'Aim2cs_app/sign_in.html', context={"sign_alert": "good"})
+			upasswd = request.POST.get('passwd')
+			newface = users()
+			newface.username = uname
+			newface.userpasswd = upasswd
+			newface.save()
+	except:
+		return render(request, 'Aim2cs_app/sign_in.html')
+
+	return render(request, 'Aim2cs_app/sign_in.html')
 

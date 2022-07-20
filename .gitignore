@@ -4,6 +4,7 @@
 __pycache__/
 <<<<<<< HEAD
 media/
+migrations/
 =======
 media/
 >>>>>>> 4a4ee291c959ae818eec13aa5193419d83ff97c2

@@ -1,7 +1,10 @@
 * {
-    font-family: 'Nanum Myeongjo', serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", sans-serif;
 }
-
+  
 .nav {
     margin-bottom: 4%;
     width: 100%;
@@ -13,6 +16,12 @@
     margin: 0px;
     position: fixed;
     opacity: 0.9;
+}
+html body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
 .nav-item {
     font-size: 18pt;
@@ -53,17 +62,83 @@
     width: 100%; 
     left: 0; 
 }
+a {
+    text-decoration: none;
+    color: black;
+}
+  
+li {
+    list-style: none;
+}
+  
+.wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.1);
+}
+  
+.sign_up {
+    width: 30%;
+    height: 600px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+  
 h2 {
-	background-color: skyblue;
-	text-align: center;
-	padding: 15px 0;
-	border-radius: 3px;
+    color: #4D6E4A;
+    font-size: 3em;
 }
 
-#joinform {
-	padding: 20px 20px;
-	border-radius: 8px;
-	margin: auto;
-	width: 50%;
-	background-color: lightblue;
+.login_id {
+    margin-top: 20px;
+    width: 85%;
 }
+
+.login_id input {
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    border: 1px solid lightgray;
+    outline: none;
+}
+
+.login_pw {
+    margin-top: 20px;
+    width: 85%;
+}
+  
+.login_pw input {
+    width: 100%;
+    height: 50px;
+    border-radius: 30px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    border: 1px solid lightgray;
+    outline: none;
+}
+  
+.submit {
+    margin-top: 50px;
+    width: 85%;
+}
+.submit input {
+    width: 100%;
+    height: 50px;
+    border: 0;
+    outline: none;
+    border-radius: 40px;
+    background: linear-gradient(to right, #8d9c8b, #4D6E4A);
+    color: white;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+h4{font-size: 20px;}
